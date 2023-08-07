@@ -1,12 +1,15 @@
 % MAIN.m
-%
-% Solve the cart-pole swing-up problem  --  minimum time
-%
-% Note:  This problem is much more difficult to solve than the
+% The problem is from Section 6 of
+% An introduction to trajectory optimization: How to do your own direct collocation. SIAM Review. 2017 Nov 6;59(4):849-904.
+% Cart-pole swing-up problem - Min Time version
+% Author: Matthew Petter Kelley
+
+% Note from author:  This problem is much more difficult to solve than the
 % minimum-force version. This is because most of the control trajectory is
 % sitting on a constraint: the maximum or minimum control force. This is
 % generally true of minimum-time trajectories: they have bang-bang
-% solutions. To get the exact solution, you would need to do many steps of
+% solutions. 
+% To get the exact solution, you would need to do many steps of
 % mesh refinement. Here I only do two iterations, to keep total time
 % reasonable. Another problem with minimum-time objective functions is that
 % they sometimes have singular arcs: solutions where there is no single
@@ -14,7 +17,7 @@
 % control trajectory and slow convergence. One solution is to include a
 % regularization term, such as force squared with a very small coefficient,
 % which forces a unique solution along the singular arc.
-%
+
 
 clc; clear;
 addpath ../../
@@ -24,7 +27,7 @@ p.m2 = 0.5;  % (kg) pole mass
 p.g = 9.81;  % (m/s^2) gravity
 p.l = 0.5;   % (m) pendulum (pole) length
 
-dist = 1.0;  %How far must the cart translate during its swing-up
+dist = 0.8;  %How far must the cart translate during its swing-up
 maxForce = 50;  %Maximum actuator forces
 
 
@@ -86,8 +89,10 @@ problem.options(2).trapezoid.nGrid = 30;
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                            Solve!                                       %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-
+tic
 soln = optimTraj(problem);
+toc
+
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%

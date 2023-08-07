@@ -1,6 +1,10 @@
 % MAIN.m
+% The problem is from Section 6 of
+% An introduction to trajectory optimization: How to do your own direct collocation. SIAM Review. 2017 Nov 6;59(4):849-904.
 %
-% Solve the cart-pole swing-up problem
+% Cart-pole swing-up problem - Min Force version
+% Author: Matthew Petter Kelley
+
 
 clc; clear;
 addpath ../../

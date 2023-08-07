@@ -542,4 +542,5 @@ feasible directions, to within the value of the optimality tolerance,
 and constraints are satisfied to within the value of the constraint tolerance.
 
 <stopping criteria details>
+Elapsed time is 4.106091 seconds.
 >> 

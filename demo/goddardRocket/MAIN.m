@@ -1,5 +1,6 @@
 % MAIN.m -- Goddard Rocket
-%
+% Author: Matthew Petter Kelley
+
 % This script runs a trajectory optimization to find the optimal thrust
 % trajectory for the rocket to reach the maximum altitude. Physical
 % parameters are roughly based on the SpaceX Falcon 9 rocket.
@@ -21,21 +22,22 @@ addpath ../../
 % SpaceX Falcon 9 rocket:
 % http://www.spacex.com/falcon9
 %
-mTotal = 505846;   %(kg)  %Total lift-off mass
-mFuel = 0.8*mTotal;  %(kg)  %mass of the fuel
-mEmpty = mTotal-mFuel;  %(kg)  %mass of the rocket (without fuel)
-Tmax = 5885000;    %(N)   %Maximum thrust
+% mTotal = 1;   %(kg)  %Total lift-off mass
+% mFuel = 0.8*mTotal;  %(kg)  %mass of the fuel
+% mEmpty = mTotal-mFuel;  %(kg)  %mass of the rocket (without fuel)
+
+Tmax = 3500;    %(N)   %Maximum thrust
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                        Problem Bounds                                   %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-h0 = 0;  %Rocket starts on the ground
+h0 =1;  %Rocket starts 1m above ground
 v0 = 0;  %Rocket starts stationary
-m0 = mTotal;  %Rocket starts full of fuel
+m0 = 1;  %Rocket starts full of fuel
 
 vF = 0;  %Trying to reach maximum height
-mF = mEmpty;  %Assume that we use all of the fuel
+mF = 0.6;
 
 hLow = 0;   %Cannot go through the earth
 hUpp = inf;  %To the moon!
@@ -43,8 +45,8 @@ hUpp = inf;  %To the moon!
 vLow = 0; %Just look at the trajectory as it goes up
 vUpp = inf;  % Go as fast as you can
 
-mLow = mEmpty;
-mUpp = mTotal;
+mLow = 0;
+mUpp = 0.6;
 
 uLow = 0;
 uUpp = Tmax; %Maximum thrust output
@@ -52,8 +54,8 @@ uUpp = Tmax; %Maximum thrust output
 P.bounds.initialTime.low = 0;
 P.bounds.initialTime.upp = 0;
 
-P.bounds.finalTime.low = 0;
-P.bounds.finalTime.upp = 60*60;
+% P.bounds.finalTime.low = 0;
+% P.bounds.finalTime.upp = 0.2;
 
 P.bounds.state.low = [hLow;vLow;mLow];
 P.bounds.state.upp = [hUpp;vUpp;mUpp];
@@ -70,7 +72,7 @@ P.bounds.control.upp = uUpp;
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                           Initial Guess                                 %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-hGuess = 2e4;   %(m) guess at the maximum height reached
+hGuess = 1e00;   %(m) guess at the maximum height reached
 P.guess.time = [0, 180];  %(s)
 P.guess.state = [ [h0;v0;m0],  [hGuess;vF;mF] ];
 P.guess.control = [uUpp, uLow];
@@ -90,9 +92,9 @@ P.func.bndObj = @(t0,x0,tF,xF)( -xF(1)/10000 );  %Maximize final height
 %                  Options and Method selection                           %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-% method = 'trapezoid';
-method = 'rungeKutta';
 % method = 'chebyshev';
+%method = 'rungeKutta';
+ method = 'chebyshev';
 
 switch method
     
@@ -100,27 +102,57 @@ switch method
         
         P.options(1).method = 'trapezoid';
         P.options(1).defaultAccuracy = 'low';
-        
+        P.options(1).trapezoid.nGrid = 10;
+        P.options(1).nlpOpt.MaxFunEvals = 2e4;
+        P.options(1).nlpOpt.MaxIter = 1e5;
+
         P.options(2).method = 'trapezoid';
         P.options(2).defaultAccuracy = 'medium';
         P.options(2).nlpOpt.MaxFunEvals = 2e4;
         P.options(2).nlpOpt.MaxIter = 1e5;
+        P.options(2).trapezoid.nGrid = 30;
+
+        P.options(3).method = 'trapezoid';
+        P.options(3).defaultAccuracy = 'high';
+        P.options(3).nlpOpt.MaxFunEvals = 2e4;
+        P.options(3).nlpOpt.MaxIter = 1e5;
+        P.options(3).trapezoid.nGrid = 50;
         
     case 'rungeKutta'
         P.options(1).method = 'rungeKutta';
         P.options(1).defaultAccuracy = 'low';
+        P.options(1).rungeKutta.nSegment = 1;
+        P.options(1).rungeKutta.nSubStep = 20
+        P.options(1).nlpOpt.MaxFunEvals = 2e4;
+        P.options(1).nlpOpt.MaxIter = 1e5
         
         P.options(2).method = 'rungeKutta';
         P.options(2).defaultAccuracy = 'medium';
+        P.options(2).rungeKutta.nSegment = 2;
+        P.options(2).rungeKutta.nSubStep = 50;
+        P.options(2).nlpOpt.MaxFunEvals = 2e4;
+        P.options(2).nlpOpt.MaxIter = 1e5;
+
+        P.options(3).method = 'rungeKutta';
+        P.options(3).defaultAccuracy = 'high';
+        P.options(3).rungeKutta.nSegment = 3;
+        P.options(3).rungeKutta.nSubStep = 60;
+        P.options3.nlpOpt.MaxFunEvals = 2e4;
+        P.options(3).nlpOpt.MaxIter = 1e5;
         
     case 'chebyshev'
         
         P.options(1).method = 'chebyshev';
         P.options(1).defaultAccuracy = 'low';
+        P.options(1).chebyshev.nColPts = 10;
         
         P.options(2).method = 'chebyshev';
-        P.options(2).defaultAccuracy = 'low';
-        P.options(2).chebyshev.nColPts = 15;
+        P.options(2).defaultAccuracy = 'medium';
+        P.options(2).chebyshev.nColPts = 20;
+
+        P.options(3).method = 'chebyshev';
+        P.options(3).defaultAccuracy = 'high';
+        P.options(3).chebyshev.nColPts = 50;
         
 end
 

@@ -90,8 +90,8 @@ P.func.bndObj = @(t0,x0,tF,xF)( -xF(1)/10000 );  %Maximize final height
 %                  Options and Method selection                           %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-method = 'trapezoid';
-% method = 'rungeKutta';
+% method = 'trapezoid';
+method = 'rungeKutta';
 % method = 'chebyshev';
 
 switch method
@@ -142,7 +142,9 @@ end
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                              Solve!                                     %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+tic
 soln = optimTraj(P);
+toc
 
 t = linspace(soln(end).grid.time(1),soln(end).grid.time(end),250);
 x = soln(end).interp.state(t);

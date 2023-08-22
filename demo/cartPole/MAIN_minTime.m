@@ -10,7 +10,7 @@
 % generally true of minimum-time trajectories: they have bang-bang
 % solutions. 
 % To get the exact solution, you would need to do many steps of
-% mesh refinement. Here I only do two iterations, to keep total time
+% mesh refinement. Only do two iterations, to keep total time
 % reasonable. Another problem with minimum-time objective functions is that
 % they sometimes have singular arcs: solutions where there is no single
 % best control trajectory. This will manifest itself as "chattering" in the
@@ -76,15 +76,19 @@ problem.options(1).nlpOpt = optimset(...
     'Display','iter',...
     'TolFun',1e-3,...
     'MaxFunEvals',1e5);
-problem.options(1).method = 'trapezoid';
-problem.options(1).trapezoid.nGrid = 10;
+problem.options(1).method = 'rungeKutta';
+%problem.options(1).trapezoid.nGrid = 60;
+%problem.options(1).chebyshev.nColPts = 100;
+problem.options(1).rungeKutta.nSegment = 1;
+problem.options(1).rungeKutta.nSubStep = 200;
 
-problem.options(2).nlpOpt = optimset(...
-    'Display','iter',...
-    'TolFun',1e-6,...
-    'MaxFunEvals',1e5);
-problem.options(2).method = 'trapezoid';
-problem.options(2).trapezoid.nGrid = 30;
+
+% problem.options(2).nlpOpt = optimset(...
+%     'Display','iter',...
+%     'TolFun',1e-6,...
+%     'MaxFunEvals',1e5);
+% problem.options(2).method = 'trapezoid';
+% problem.options(2).trapezoid.nGrid = 30;
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                            Solve!                                       %

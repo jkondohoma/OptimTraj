@@ -1,0 +1,415 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running OptimTraj, iteration 1
+  -> Transcription via trapezoid method, nGrid = 2
+
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  8.881784e-20. 
+> In backsolveSys
+In solveAugSystem
+In leastSquaresLagrangeMults
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.613733e-18. 
+> In backsolveSys
+In solveAugSystem
+In leastSquaresLagrangeMults
+In nlpStopTest
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0      13    2.000000e+00    3.142e+00    7.583e-01
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.440892e-19. 
+> In backsolveSys
+In solveKKTsystem
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.440892e-19. 
+> In backsolveSys
+In solveKKTsystem
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.613733e-18. 
+> In backsolveSys
+In solveAugSystem
+In normalCauchyStep
+In normalStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.613733e-18. 
+> In backsolveSys
+In solveAugSystem
+In normalNewtonStep
+In normalStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  8.881784e-20. 
+> In backsolveSys
+In solveAugSystem
+In projConjGrad
+In projConjGrad
+In tangentialStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  8.881784e-20. 
+> In backsolveSys
+In solveAugSystem
+In projConjGrad
+In projConjGrad
+In tangentialStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  8.881784e-20. 
+> In backsolveSys
+In solveAugSystem
+In projConjGrad
+In projConjGrad
+In tangentialStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.613733e-18. 
+> In backsolveSys
+In solveAugSystem
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.613733e-18. 
+> In backsolveSys
+In solveAugSystem
+In normalCauchyStep
+In normalStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.613733e-18. 
+> In backsolveSys
+In solveAugSystem
+In normalNewtonStep
+In normalStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  8.881784e-20. 
+> In backsolveSys
+In solveAugSystem
+In projConjGrad
+In projConjGrad
+In tangentialStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.613733e-18. 
+> In backsolveSys
+In solveAugSystem
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.613733e-18. 
+> In backsolveSys
+In solveAugSystem
+In normalCauchyStep
+In normalStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.613733e-18. 
+> In backsolveSys
+In solveAugSystem
+In normalNewtonStep
+In normalStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  8.881784e-20. 
+> In backsolveSys
+In solveAugSystem
+In projConjGrad
+In projConjGrad
+In tangentialStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+    1      33    1.607446e+00    3.142e+00    6.153e-01    7.026e-01
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  8.662674e-19. 
+> In backsolveSys
+In solveKKTsystem
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+    2      46    4.029295e-01    3.142e+00    2.890e+00    3.783e+00
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  8.128234e-19. 
+> In backsolveSys
+In solveAugSystem
+In leastSquaresLagrangeMults
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.491436e-17. 
+> In backsolveSys
+In solveAugSystem
+In leastSquaresLagrangeMults
+In nlpStopTest
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+    3      63    3.920633e-01    3.142e+00    8.713e-02    2.807e-01
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.807147e-17. 
+> In backsolveSys
+In solveAugSystem
+In normalCauchyStep
+In normalStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.807147e-17. 
+> In backsolveSys
+In solveAugSystem
+In normalNewtonStep
+In normalStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  5.080146e-19. 
+> In backsolveSys
+In solveAugSystem
+In projConjGrad
+In projConjGrad
+In tangentialStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  5.080146e-19. 
+> In backsolveSys
+In solveAugSystem
+In projConjGrad
+In projConjGrad
+In tangentialStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.807147e-17. 
+> In backsolveSys
+In solveAugSystem
+In normalCauchyStep
+In normalStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.807147e-17. 
+> In backsolveSys
+In solveAugSystem
+In normalNewtonStep
+In normalStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  5.080146e-19. 
+> In backsolveSys
+In solveAugSystem
+In projConjGrad
+In projConjGrad
+In tangentialStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  5.080146e-19. 
+> In backsolveSys
+In solveAugSystem
+In projConjGrad
+In projConjGrad
+In tangentialStep
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.093399e-19. 
+> In backsolveSys
+In solveAugSystem
+In leastSquaresLagrangeMults
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.190848e-17. 
+> In backsolveSys
+In solveAugSystem
+In leastSquaresLagrangeMults
+In nlpStopTest
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+    4      77    3.807049e-01    3.142e+00    8.461e-02    1.540e-02
+Warning: Matrix is singular to working precision. 
+> In backsolveSys
+In solveKKTsystem
+In computeTrialStep
+In barrier
+In fmincon (line 895)
+In directCollocation (line 95)
+In trapezoid (line 74)
+In optimTraj (line 180)
+In MAIN_minTime (line 93)
+ 
+
+Converged to an infeasible point.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance but constraints are not
+satisfied to within the value of the constraint tolerance.
+
+<stopping criteria details>
+
+Consider enabling the interior point method feasibility mode.
+
+Elapsed time is 1.082408 seconds.
+>> 

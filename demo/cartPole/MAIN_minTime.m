@@ -76,11 +76,12 @@ problem.options(1).nlpOpt = optimset(...
     'Display','iter',...
     'TolFun',1e-3,...
     'MaxFunEvals',1e5);
+%chebyshev, trapezoid, rungeKutta
 problem.options(1).method = 'rungeKutta';
-%problem.options(1).trapezoid.nGrid = 60;
-%problem.options(1).chebyshev.nColPts = 100;
-problem.options(1).rungeKutta.nSegment = 1;
-problem.options(1).rungeKutta.nSubStep = 200;
+% problem.options(1).trapezoid.nGrid = 300;
+% problem.options(1).chebyshev.nColPts = 200;
+problem.options(1).rungeKutta.nSegment = 30;
+problem.options(1).rungeKutta.nSubStep = 20;
 
 
 % problem.options(2).nlpOpt = optimset(...
